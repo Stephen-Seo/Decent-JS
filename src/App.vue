@@ -1,18 +1,21 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
+  <div :id="name">
+    <nav-view/>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
+module.exports = {
+  name: 'Voat'
 }
 </script>
 
 <style>
-#app {
+body {
+  background: #333;
+}
+#Voat {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
