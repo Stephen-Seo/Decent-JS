@@ -1,6 +1,6 @@
 <template>
   <div id="nav-bar">
-  	{{name}}
+  	<img id="logo" src="../assets/Voat-logo.png"/>
   </div>
 
 
@@ -18,9 +18,12 @@ module.exports = {
 </script>
 
 <style scoped>
-#nav-bar {
+.nav-bar {
   width: 100%;
   height: 80px;
   background: #f00;
+}
+img {
+  height: 80px;
 }
 <style>

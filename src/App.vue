@@ -12,15 +12,18 @@ module.exports = {
 </script>
 
 <style>
-body {
-  background: #333;
-}
-#Voat {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  body {
+    background: #333;
+    margin: 0px;
+  }
+  #nav-bar {
+    width: 100%;
+    height: 80px;
+    background: #222;  
+  }
+  #nav-bar #logo {
+    margin: 0px 20px;
+    height: 80px;
+  }
+
+ </style>
