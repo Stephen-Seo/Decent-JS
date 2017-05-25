@@ -1,6 +1,7 @@
 <template>
   <div id="nav-bar">
   	<img id="logo" src="../assets/Voat-logo.png"/>
+	<button id="login">Login</button>
   </div>
 
 
