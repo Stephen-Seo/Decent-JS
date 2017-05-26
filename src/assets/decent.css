@@ -10,22 +10,17 @@ body {
   height: 80px;
   background: #222;
   color: #FFF;
-  display: flex;
-  align-items: center;
 }
 #nav-bar #logo {
   margin: 15px;
   height: 50px;
 }
 #nav-bar #login{
-
-  position: absolute;
-  right: 0px;
-  top: 0px;
   height: 100%;
   width: 100px;
   background: #2c2c2c;
   border: none;
+  margin-top: -30px;
   color: #aaa;
   font-size: 16pt;
   cursor: pointer;
@@ -36,6 +31,23 @@ body {
 #nav-bar #login:focus{
   background: #333;
   outline: none;
+}
+
+#nav-bar #userbar {
+  display: inline-block;
+  position: relative;
+  right: 0px;
+  height: 100%;
+  padding-top: 30px;
+  background: #333;
+  float: right;
+}
+#nav-bar #userbar #username {
+  display: inline-block;
+  color: #888;
+  padding: 10px;
+  margin: 5px;
+  font-size: 12pt;
 }
 
 .modal-mask {
@@ -125,11 +137,9 @@ input:focus{
   border-radius: 5px;
 }
 .modal-container #status.success {
- color: #0A0;
- border: 1px solid #0A0;
+ color: #080;
 }
 .modal-container #status.error {
- color: #F33;
- border: 1px solid #F00;
+ color: #D81818;
 }
 
