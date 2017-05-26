@@ -5,8 +5,11 @@ import App from './App'
 import Nav from './components/Nav'
 import Login from './components/Login'
 import router from './router'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
+Vue.use(VueAxios, axios)
 
 /* eslint-disable no-new */
 Vue.component('nav-view', Nav)

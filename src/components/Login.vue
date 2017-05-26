@@ -7,6 +7,7 @@
     </div>
     <div id="register-form" v-show="tab == 'register'">
         <div id="title">Register New Account</div>
+	<div id="status" :class="status">{{status_msg}}</div>
         <input id="uname" v-model="username" placeholder="Username"/>
         <input type="password" id="password" v-model="password" placeholder="Password"/>
         <input type="password" id="passconf" v-model="pass_conf" placeholder="Repeat Password"/>
@@ -29,6 +30,8 @@ module.exports = {
     return {
       show: true,
       tab: 'login',
+      status: 'none',
+      status_msg: '',
       username: '',
       password: '',
       pass_conf: ''
@@ -55,19 +58,32 @@ module.exports = {
     check_user_avail (uname) {
 
     },
-    error () {
+    error (e) {
+      this.status = 'error'
+      this.status_msg = e
       console.log('Error')
     },
-    success () {
+    success (r) {
+      if (r.data.error) {
+        this.error(r.data.error)
+        return
+      }
+      console.dir(r)
+      this.status = 'success'
+      this.status_msg = r.data.success
       console.log('Success')
     },
     submit () {
       if (this.tab === 'register') {
         if (this.password === this.pass_conf) {
-          this.$http.post('localhost:5000/authenticate', {
+          this.axios.post('http://192.168.0.122/register', {
+            headers: {
+              'Access-Control-Allow-Origin': '*',
+              'Content-Type': 'application/json'
+            },
             username: this.username,
             password: this.password
-          }).then(this.success, this.error)
+          }).then(this.success).catch(this.error)
         }
       }
     }

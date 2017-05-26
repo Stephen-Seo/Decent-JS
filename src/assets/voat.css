@@ -48,7 +48,9 @@ body {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  width: 30%;
+  min-width: 30%;
+  width: 600px;
+
   height: 600px;
   margin: 0px auto;
   background: #444;
@@ -114,3 +116,18 @@ input:focus{
 .modal-container #submit:hover{
   background: #3a3a3a;
 }
+.modal-container #status {
+  width: 50%;
+  padding: 5px 14px;
+  border-radius: 5px;
+}
+.modal-container #status.success {
+ color: #0A0;
+ border: 1px solid #0A0;
+}
+.modal-container #status.error {
+ color: #F33;
+ border: 1px solid #F00;
+}
+
+
