@@ -34,4 +34,4 @@ module.exports = {
 img {
   height: 80px;
 }
-<style>
+</style>

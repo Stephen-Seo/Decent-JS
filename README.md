@@ -1,6 +1,6 @@
-# voat
+# DECENT
 
-> A Vue.js project
+> A distributed platform for social communities.
 
 ## Build Setup
 

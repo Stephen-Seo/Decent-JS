@@ -1,7 +1,7 @@
 {
-  "name": "voat",
+  "name": "decent",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "A distributed platform for social communities.",
   "author": "Todd Groff <tag.groff@gmail.com>",
   "private": true,
   "scripts": {

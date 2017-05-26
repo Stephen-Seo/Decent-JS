@@ -3,14 +3,14 @@
 
 <script>
 export default {
-  name: 'Voat',
+  name: 'Decent',
   data () {
     return {
-      name: 'Voat'
+      name: 'Decent'
     }
   }
 }
-</script
+</script>
 
 <style>
 
