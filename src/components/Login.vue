@@ -15,6 +15,7 @@
     </div>
     <div id="login-form" v-show="tab == 'login'">
         <div id="title">Login</div>
+        <div id="status" :class="status">{{status_msg}}</div>
         <input id="uname" v-model="username" placeholder="Username"/>
         <input type="password" id="password" v-model="password" placeholder="Password"/>
         <button id="submit" @click="submit">Login</button>
@@ -64,27 +65,34 @@ module.exports = {
       console.log('Error')
     },
     success (r) {
+      console.dir(r)
       if (r.data.error) {
+        console.log('REST Error')
         this.error(r.data.error)
         return
       }
-      console.dir(r)
       this.status = 'success'
-      this.status_msg = r.data.success
+      if (r.data.result) {
+        this.status_msg = 'Logged in as ' + r.data.result.username
+      } else {
+        this.status_msg = r.data.success
+      }
+
       console.log('Success')
     },
     submit () {
       if (this.tab === 'register') {
         if (this.password === this.pass_conf) {
-          this.axios.post('http://192.168.0.122/register', {
-            headers: {
-              'Access-Control-Allow-Origin': '*',
-              'Content-Type': 'application/json'
-            },
+          this.axios.post('http://192.168.0.122:8080/register', {
             username: this.username,
             password: this.password
           }).then(this.success).catch(this.error)
         }
+      } else if (this.tab === 'login') {
+        this.axios.post('http://192.168.0.122:8080/authenticate', {
+          username: this.username,
+          password: this.password
+        }).then(this.success).catch(this.error)
       }
     }
   }

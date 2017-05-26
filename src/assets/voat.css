@@ -11,8 +11,8 @@ body {
   background: #222;  
 }
 #nav-bar #logo {
-  margin: 0px 20px;
-  height: 80px;
+  margin: 20px;
+  height: 40px;
 }
 #nav-bar #login{
 
@@ -68,7 +68,7 @@ body {
   display: inline-block;
   width: 50%;
   background: #333;
-  border-bottom: 1px solid #00adff;
+  border-bottom: 1px solid #eb3d00;
   padding: 15px 0px;
   text-align: center;
   font-size: 16pt;
@@ -99,7 +99,7 @@ body {
 input:focus{
   outline: none;
   background: #3a3a3a;
-  border-bottom: 1px solid #9d90c6;
+  border-bottom: 1px solid #ff8100;
 }
 #register-form #uname {
   margin-bottom: 20px;
