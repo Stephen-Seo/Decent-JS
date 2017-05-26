@@ -1,6 +1,8 @@
 body {
   background: #333;
   margin: 0px;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
 }
 #nav-bar {
   position: relative;
@@ -72,4 +74,43 @@ body {
 .modal-container .tab.active {
   border-bottom: none;
   background: #444;
+}
+#register-form, #login-form {
+  width: 100%;
+  padding: 20px;
+}
+.modal-container #title {
+  font-size: 18pt;
+  font-weight: bold;
+  color: #888;
+  margin: 10px 0px 20px 0px;
+}
+.modal-container input {
+ display: block;
+ border: none;
+ width: 50%;
+ margin: 5px 0px;
+ background: #333;
+ color: #eee;
+ padding: 15px;
+}
+input:focus{
+  outline: none;
+  background: #3a3a3a;
+  border-bottom: 1px solid #9d90c6;
+}
+#register-form #uname {
+  margin-bottom: 20px;
+}
+.modal-container #submit {
+  background: #333;
+  border: none;
+  color: #eee;
+  margin-top: 30px;
+  font-size: 14pt;
+  padding: 15px 30px;
+  cursor: pointer;
+}
+.modal-container #submit:hover{
+  background: #3a3a3a;
 }
