@@ -29,7 +29,7 @@
 module.exports = {
   data () {
     return {
-      show: true,
+      show: false,
       tab: 'login',
       status: 'none',
       status_msg: '',

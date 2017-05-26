@@ -31,6 +31,17 @@ body {
 }
 
 /* Side Bar */
+#sidebar {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background: #282828;
+  font-size: 12pt;
+  color: #aaa;
+}
 #sidebar #login{
   width: 100%;
   padding: 26px;
@@ -52,6 +63,10 @@ body {
   position: relative;
   height: 80px;
   width: 100%;
+  background: #2c2c2c;
+  cursor:pointer
+}
+#sidebar #userbar:hover {
   background: #333;
 }
 #sidebar #userbar #user {
@@ -70,14 +85,31 @@ body {
   color: #888;
   font-size: 20pt;
 }
-#sidebar {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 400px;
-  height: 100%;
-  background: #282828;
+#sidebar #user-menu {
+  position: relative;
+  top: -3px;
+  background: #222;
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.2s ease;
+}
+#sidebar #user-menu.open {
+  height: auto;
+  transition: height 0.2s ease;
+}
+#sidebar #user-menu li {
+  padding: 8px;
+  cursor: pointer;
+  padding-right: 30px;
+  text-align: right;
+}
+#sidebar #user-menu li:hover {
+  background: #333;
+}
+#sidebar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 /* Modals */
