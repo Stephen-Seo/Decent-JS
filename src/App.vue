@@ -1,7 +1,7 @@
 <template>
-	<!-- <div :id="name"> -->
-	<div>
+  <div id="decent">
     <nav-view/>
+    <sidebar/>
     <router-view></router-view>
   </div>
 </template>

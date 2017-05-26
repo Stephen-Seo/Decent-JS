@@ -2,7 +2,6 @@
   <div id="nav-bar">
   	<img id="logo" src="../assets/Decent-logo-green-pink.png"/>
 	<div id="userbar">
-	  <button id="login" v-if="!api_token" @click="open_login">Login</button>
   	  <login-modal ref="login_modal"i v-if="!api_token" @login="login"/>
 	  <div v-if="api_token">
 	    <span id="username">{{this.username}}@home</span>
@@ -16,11 +15,10 @@
 
 <script>
 module.exports = {
-  name: 'Nav',
+  name: 'navbar',
   data () {
     return {
-      name: 'Navtest',
-      show_login: true,
+      show_login: false,
       username: '',
       api_token: ''
     }
