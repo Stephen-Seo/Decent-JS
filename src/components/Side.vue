@@ -2,6 +2,11 @@
   <div id="sidebar">
     <button id="login" v-if="!api_token" @click="open_login">Login</button>
     <login-modal ref="login_modal"i v-if="!api_token" @login="login"/>
+
+    <div id="userbar" v-show="api_token">
+      <span id="user">{{this.username}}@home</span>
+      <span id="cents">0</span>
+    </div>
   </div>
 </template>
 

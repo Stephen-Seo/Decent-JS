@@ -2,6 +2,7 @@ body {
   background: #333;
   margin: 0px;
   font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
   letter-spacing: 1px;
   height: 100%;
 }
@@ -49,18 +50,25 @@ body {
 #sidebar #userbar {
   display: inline-block;
   position: relative;
-  right: 0px;
-  height: 100%;
-  padding-top: 30px;
+  height: 80px;
+  width: 100%;
   background: #333;
-  float: right;
 }
-#sidebar #userbar #username {
-  display: inline-block;
+#sidebar #userbar #user {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   color: #888;
   padding: 10px;
-  margin: 5px;
-  font-size: 12pt;
+  font-size: 16pt;
+}
+#sidebar #userbar #cents {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  color: #888;
+  font-size: 20pt;
 }
 #sidebar {
   display: inline-block;
