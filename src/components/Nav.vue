@@ -1,6 +1,6 @@
 <template>
   <div id="nav-bar">
-  	<img id="logo" src="../assets/Decent-logo.png"/>
+  	<img id="logo" src="../assets/Decent-logo-green-pink.png"/>
 	<button id="login" @click="open_login">Login</button>
   	<login-modal ref="login_modal"/>
   </div>
