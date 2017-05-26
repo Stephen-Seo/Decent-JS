@@ -2,7 +2,8 @@
 <div class="modal-mask" v-show="show" transition="modal" @click="close">
   <div class="modal-container" @click.stop>
     <div class="tabs">
-      <span class="tab">Login</span>
+      <span class="tab" :class="{ active: tab == 'login' }" @click="login">Login</span>
+      <span class="tab" :class="{ active : tab == 'register' }" @click="register">Register</span>
     </div>
   </div>
 </div>
@@ -12,7 +13,8 @@
 module.exports = {
   data () {
     return {
-      show: true
+      show: true,
+      tab: 'login'
     }
   },
   methods: {
@@ -26,6 +28,12 @@ module.exports = {
     },
     toggle () {
       this.show = !this.show
+    },
+    login () {
+      this.tab = 'login'
+    },
+    register () {
+      this.tab = 'register'
     }
   }
 }

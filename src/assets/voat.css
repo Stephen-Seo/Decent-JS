@@ -54,4 +54,22 @@ body {
   box-shadow: 0px 5px 15px rgba(0,0,0,0.2); 
   border-radius: 5px;
 }
-
+.modal-container .tabs {
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 0;
+}
+.modal-container .tab{
+  display: inline-block;
+  width: 50%;
+  background: #333;
+  border-bottom: 1px solid #00adff;
+  padding: 15px 0px;
+  text-align: center;
+  font-size: 16pt;
+}
+.modal-container .tab.active {
+  border-bottom: none;
+  background: #444;
+}
