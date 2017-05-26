@@ -9,10 +9,10 @@
     </div>
     <div id="user-menu" v-if="api_token":class="{open: open_menu}">
       <ul>
-        <li>Profile</li>  
-        <li>Inbox</li>  
-        <li>Settings</li>  
-        <li @click="logout">Logout</li>  
+        <li>Profile <icon name="user"/></li>  
+        <li>Inbox <icon name="envelope-o"/></li>  
+        <li>Settings <icon name="cog"/></li>  
+        <li @click="logout">Logout <icon name="times"/></li>  
       </ul>
     </div>
   </div>

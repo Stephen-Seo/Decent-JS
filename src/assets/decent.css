@@ -13,6 +13,14 @@ body {
   font-size: 0;
   height: 100vh;
 }
+#decent button{
+  color: #888;
+  border: none;
+  cursor: pointer;
+}
+#decent button:focus {
+  outline: 0;
+}
 
 /* Nav Bar */
 #nav-bar {
@@ -28,6 +36,16 @@ body {
 #nav-bar #logo {
   margin: 15px;
   height: 50px;
+}
+#nav-bar #subs-button {
+  height: 100%;
+  position: relative;
+  top: -34px;
+  padding: 27px 15px;
+  background: #282828;
+}
+#nav-bar #subs-button:hover {
+  background: #333;
 }
 
 /* Side Bar */
@@ -45,7 +63,7 @@ body {
 #sidebar #login{
   width: 100%;
   padding: 26px;
-  background: #2c2c2c;
+  background: #282828;
   border: none;
   color: #aaa;
   font-size: 18pt;
@@ -89,19 +107,25 @@ body {
   position: relative;
   top: -3px;
   background: #222;
-  height: 0px;
+  max-height: 0px;
   overflow: hidden;
-  transition: height 0.2s ease;
+  transition: max-height 0.3s ease-in;
 }
 #sidebar #user-menu.open {
-  height: auto;
-  transition: height 0.2s ease;
+  max-height: 800px;
+  transition: max-height 0.3s ease-out;
 }
 #sidebar #user-menu li {
   padding: 8px;
   cursor: pointer;
   padding-right: 30px;
   text-align: right;
+}
+#sidebar #user-menu svg {
+  position: relative;
+  top: 5px;
+  height: 24px;
+  margin-left: 15px;
 }
 #sidebar #user-menu li:hover {
   background: #333;
@@ -110,6 +134,17 @@ body {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+/* Subs Bar */
+#subsbar {
+  width: 0px;
+  background: #282828;
+  height: 100vh;
+  transition: width 0.3s ease-in-out;
+}
+#subsbar.open {
+  width: 300px;
 }
 
 /* Modals */

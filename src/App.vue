@@ -1,6 +1,7 @@
 <template>
   <div id="decent">
-    <nav-view/>
+    <nav-view @toggle-subs="toggle_subs"/>
+    <subsbar ref="subs_bar"/>
     <sidebar/>
     <router-view></router-view>
   </div>
@@ -8,7 +9,12 @@
 
 <script>
 module.exports = {
-  name: 'Decent'
+  name: 'Decent',
+  methods: {
+    toggle_subs () {
+      this.$refs.subs_bar.toggle()
+    }
+  }
 }
 </script>
 

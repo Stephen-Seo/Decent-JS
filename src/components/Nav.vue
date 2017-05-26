@@ -1,5 +1,8 @@
 <template>
   <div id="nav-bar">
+        <button id="subs-button" @click="toggle_subs">
+          <icon name="bars"/>
+        </button>
   	<img id="logo" src="../assets/Decent-logo-green-pink.png"/>
   </div>
 
@@ -13,7 +16,11 @@ module.exports = {
     return {
     }
   },
-  methods: {}
+  methods: {
+    toggle_subs () {
+      this.$emit('toggle-subs')
+    }
+  }
 }
 </script>
 
