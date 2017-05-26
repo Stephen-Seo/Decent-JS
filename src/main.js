@@ -3,12 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import Nav from './components/Nav'
+import Login from './components/Login'
 import router from './router'
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 Vue.component('nav-view', Nav)
+Vue.component('login-modal', Login)
+
 new Vue({
   el: '#app',
   router,

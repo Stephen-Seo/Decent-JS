@@ -28,4 +28,30 @@ body {
 #nav-bar #login:hover{
   background: #333;
 }
+#nav-bar #login:focus{
+  background: #333;
+  outline: none;
+}
+
+.modal-mask {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  transition: opacity 2s ease;
+}
+.modal-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30%;
+  height: 600px;
+  margin: 0px auto;
+  background: #444;
+  color: #eee;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2); 
+  border-radius: 5px;
+}
 

@@ -1,7 +1,8 @@
 <template>
   <div id="nav-bar">
   	<img id="logo" src="../assets/Voat-logo.png"/>
-	<button id="login">Login</button>
+	<button id="login" @click="open_login">Login</button>
+  	<login-modal ref="login_modal"/>
   </div>
 
 
@@ -12,7 +13,13 @@ module.exports = {
   name: 'Nav',
   data () {
     return {
-      name: 'Navtest'
+      name: 'Navtest',
+      show_login: true
+    }
+  },
+  methods: {
+    open_login () {
+      this.$refs.login_modal.open()
     }
   }
 }
