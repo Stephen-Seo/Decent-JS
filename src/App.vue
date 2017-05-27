@@ -1,5 +1,6 @@
 <template>
-  <div :id="name">
+	<!-- <div :id="name"> -->
+	<div>
     <nav-view/>
     <router-view></router-view>
   </div>
@@ -7,8 +8,8 @@
 
 <script>
 module.exports = {
-  name: 'Voat'
+  name: 'Decent'
 }
 </script>
 
-<style src="./assets/voat.css"/>
+<style src="./assets/decent.css"/>

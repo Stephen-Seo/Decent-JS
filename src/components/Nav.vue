@@ -1,6 +1,8 @@
 <template>
   <div id="nav-bar">
-  	<img id="logo" src="../assets/Voat-logo.png"/>
+    <div id="site-logo">
+      <span class="site-logo-front">DE</span><span class="site-logo-back">CENT</span>
+    </div>
 	<button id="login" @click="open_login">Login</button>
   	<login-modal ref="login_modal"/>
   </div>
@@ -34,4 +36,4 @@ module.exports = {
 img {
   height: 80px;
 }
-<style>
+</style>
