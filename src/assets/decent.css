@@ -41,7 +41,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  right: 400px;
+  right: 300px;
   height: 80px;
   background: #222;
   color: #FFF;
@@ -67,7 +67,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  width: 400px;
+  width: 300px;
   height: 100%;
   background: #282828;
   font-size: 12pt;
@@ -106,7 +106,7 @@ body {
   left: 0;
   color: #888;
   padding: 10px;
-  font-size: 16pt;
+  font-size: 12pt;
 }
 #sidebar #userbar #cents {
   position: absolute;
@@ -122,11 +122,11 @@ body {
   background: #222;
   max-height: 0px;
   overflow: hidden;
-  transition: max-height 0.3s ease-in;
+  transition: max-height 0.4s ease-in-out;
 }
 #sidebar #user-menu.open {
   max-height: 800px;
-  transition: max-height 0.3s ease-out;
+  transition: max-height 0.4s ease-in-out;
 }
 #sidebar #user-menu li {
   padding: 8px;
@@ -161,6 +161,20 @@ body {
 }
 #subsbar.open {
   left: 0px;
+}
+#subsbar #create-sub {
+  width: 100%;
+  padding: 10px;
+  background: #282828;
+  font-size: 12pt;
+}
+#subsbar #create-sub:hover {
+  background: #333;
+}
+#subsbar #create-sub svg {
+  position: relative;
+  top: 2px;
+  margin: 0px 10px;
 }
 #subsbar #sub-search {
   width: 100%;

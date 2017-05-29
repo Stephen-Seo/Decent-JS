@@ -15,6 +15,7 @@ import Nav from './components/Nav'
 import Side from './components/Side'
 import Subs from './components/Subs'
 import Login from './components/Login'
+import CreateSub from './components/CreateSub'
 
 /* Config */
 Vue.config.productionTip = false
@@ -27,6 +28,7 @@ Vue.component('login-modal', Login)
 Vue.component('sidebar', Side)
 Vue.component('subsbar', Subs)
 Vue.component('icon', Icon)
+Vue.component('create-sub-modal', CreateSub)
 
 /* Main Vue Instance */
 var decent = new Vue({
