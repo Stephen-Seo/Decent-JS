@@ -1,5 +1,5 @@
 <template>
-<div class="modal-mask" v-show="show" transition="modal" @click="close">
+<div class="modal-mask" v-show="show && !authenticated" transition="modal" @click="close">
   <div class="modal-container" @click.stop>
     <div class="tabs">
       <span class="tab" :class="{ active: tab == 'login' }" @click="login">Login</span>
@@ -35,7 +35,13 @@ module.exports = {
       status_msg: '',
       username: '',
       password: '',
-      pass_conf: ''
+      pass_conf: '',
+      keypair: require('../keypair')
+    }
+  },
+  computed: {
+    authenticated () {
+      return this.$store.getters.authenticated
     }
   },
   methods: {
@@ -57,34 +63,6 @@ module.exports = {
       this.tab = 'register'
     },
     check_user_avail (uname) {},
-    error (e) {
-      this.status = 'error'
-      this.status_msg = e
-      console.log('Error')
-    },
-    success (r) {
-      console.dir(r)
-      console.log(this.tab)
-      if (this.tab === 'login') {
-        if (r.data.error) {
-          console.log('REST Error')
-          this.error(this._.startCase(r.data.error))
-          return
-        }
-        this.status = 'success'
-        if (r.data.result) {
-          this.status_msg = 'Logged in as ' + r.data.result.username
-          this.$emit('login', {
-            username: r.data.result.username,
-            token: r.data.result.api_token
-          })
-        }
-      } else if (this.tab === 'register') {
-        this.status = 'success'
-        this.status_msg = r.data.success
-      }
-      console.log('Success')
-    },
     submit () {
       if (this.tab === 'register') {
         if (this.password === this.pass_conf) {
@@ -94,10 +72,10 @@ module.exports = {
           }).then(this.success).catch(this.error)
         }
       } else if (this.tab === 'login') {
-        this.axios.post('http://192.168.0.122:8080/authenticate', {
+        this.$store.dispatch('login', {
           username: this.username,
           password: this.password
-        }).then(this.success).catch(this.error)
+        })
       }
     }
   }

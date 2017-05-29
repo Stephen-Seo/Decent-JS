@@ -1,6 +1,7 @@
 <template>
-  <div class="modal-mask" v-show="show" @click="close">
+  <div id="create-sub-modal" class="modal-mask" v-show="show" @click="close">
     <div class="modal-container" @click.stop>
+      <div id="title"> Create A New Sub </div>
     </div>
   </div>
 </template>
@@ -15,6 +16,7 @@ module.exports = {
   },
   methods: {
     open () {
+      console.log(this.$root.test)
       this.show = true
     },
     close () {

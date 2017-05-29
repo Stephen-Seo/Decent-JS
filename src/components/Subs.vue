@@ -26,6 +26,7 @@ module.exports = {
       this.open_subs = !this.open_subs
     },
     create_sub () {
+      this.$root.test = 'test'
       this.$refs.create_sub_modal.open()
     }
   }

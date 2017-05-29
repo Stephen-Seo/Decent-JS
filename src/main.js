@@ -1,8 +1,8 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import App from './App'
 import router from './router'
+import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import lodash from 'lodash'
@@ -11,6 +11,7 @@ import Icon from 'vue-awesome/components/Icon'
 import 'vue-awesome/icons'
 
 /* Component imports */
+import App from './App'
 import Nav from './components/Nav'
 import Side from './components/Side'
 import Subs from './components/Subs'
@@ -34,7 +35,11 @@ Vue.component('create-sub-modal', CreateSub)
 var decent = new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
-  components: { App, Icon }
+  components: { App, Icon },
+  data: {
+
+  }
 })
 console.dir(decent)

@@ -278,3 +278,8 @@ body {
  color: #D81818;
 }
 
+/* Create Sub Modal */
+#create-sub-modal .modal-container {
+  padding: 15px;
+}
+

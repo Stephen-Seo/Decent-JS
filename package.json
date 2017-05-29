@@ -15,10 +15,13 @@
   "dependencies": {
     "axios": "^0.16.1",
     "lodash": "^4.17.4",
+    "node-rsa": "^0.4.2",
     "vue": "^2.3.3",
+    "vue-awesome": "^2.3.1",
     "vue-axios": "^2.0.2",
     "vue-lodash": "^1.0.3",
-    "vue-router": "^2.3.1"
+    "vue-router": "^2.3.1",
+    "vuex": "^2.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
