@@ -1,10 +1,13 @@
 body {
+  box-sizing: border-box;
   background: #333;
   margin: 0px;
   font-family: "Roboto", sans-serif;
-  box-sizing: border-box;
   letter-spacing: 1px;
   height: 100%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 /* Main App */
 #decent {
@@ -13,13 +16,23 @@ body {
   font-size: 0;
   height: 100vh;
 }
-#decent button{
+#decent button {
   color: #888;
   border: none;
   cursor: pointer;
 }
 #decent button:focus {
   outline: 0;
+}
+#decent input {
+ border: none;
+ padding: 15px;
+ background: #333;
+ color: #eee;
+}
+#decent input:focus{
+  outline: none;
+  border-bottom: 1px solid #a2009d;
 }
 
 /* Nav Bar */
@@ -138,13 +151,30 @@ body {
 
 /* Subs Bar */
 #subsbar {
-  width: 0px;
+  position: absolute;
+  top: 80px;
+  left: -300px;
+  width: 300px;
   background: #282828;
   height: 100vh;
-  transition: width 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out;
 }
 #subsbar.open {
-  width: 300px;
+  left: 0px;
+}
+#subsbar #sub-search {
+  width: 100%;
+  position: relative;
+
+}
+#subsbar #sub-search input {
+  width: 100%;
+}
+#subsbar #sub-search svg {
+  position: absolute;
+  top: 14px;
+  right: 15px;
+  color: #888;
 }
 
 /* Modals */
@@ -206,13 +236,6 @@ body {
  width: 50%;
  margin: 5px 0px;
  background: #333;
- color: #eee;
- padding: 15px;
-}
-input:focus{
-  outline: none;
-  background: #3a3a3a;
-  border-bottom: 1px solid #a2009d;
 }
 #register-form #uname {
   margin-bottom: 20px;

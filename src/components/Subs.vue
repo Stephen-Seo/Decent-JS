@@ -1,6 +1,9 @@
 <template>
   <div id="subsbar" :class="{open: open_subs}">
-
+    <div id="sub-search">
+      <input :value="sub_query" placeholder="Search Subs"/>
+      <icon name="search"/>
+    </div>
   </div>
 </template>
 
@@ -9,7 +12,8 @@ module.exports = {
   name: 'Subs',
   data () {
     return {
-      open_subs: true
+      open_subs: true,
+      sub_query: ''
     }
   },
   methods: {
