@@ -1,15 +1,12 @@
 <template>
   <div id="create-sub-modal" class="modal-mask" v-show="show" @click="close">
-    <div class="modal-container" v-if="authenticated" @click.stop>
+    <div class="modal-container" @click.stop>
       <div id="title"> Create A New Sub </div>
       <div id="createsub-form">
         <input v-model="new_sub_name" placeholder="New Sub Name"></input>
         <button id="submit" @click="submit">Create Sub</button>
       </div>
       <div id="status" class="error" v-if="sub_error">{{sub_error}}</div>
-    </div>
-    <div class="modal-container" v-else @click.stop>
-      <div id="title">Please login to create a new sub.</div>
     </div>
   </div>
 </template>

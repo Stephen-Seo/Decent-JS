@@ -4,7 +4,7 @@
     <login-modal ref="login_modal"i v-if="!authenticated"/>
 
     <div id="userbar" v-show="authenticated" @click="toggle_menu">
-      <span id="user">{{this.$store.state.username}}@home</span>
+      <span id="user">{{this.$store.state.username}}@{{this.$store.state.server_address}}</span>
       <span id="cents">0</span>
     </div>
     <div id="user-menu" v-if="authenticated":class="{open: open_menu}">

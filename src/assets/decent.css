@@ -191,8 +191,17 @@ body {
   color: #888;
 }
 #subsbar #subs-list {
+  list-style: none;
+  padding-left: 0px;
   font-size: 14pt;
   color: #999;
+}
+#subsbar #subs-list .sub {
+  padding: 5px 20px;
+  cursor: pointer;
+}
+#subsbar #subs-list .sub:hover {
+  background: #333;
 }
 
 /* Modals */

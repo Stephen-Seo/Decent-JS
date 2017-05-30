@@ -1,6 +1,6 @@
 <template>
   <div id="subsbar" :class="{open: open_subs}">
-    <button id="create-sub" @click="create_sub">
+    <button id="create-sub" @click="create_sub" v-if="authenticated">
       <icon name="plus"/>
       Create Sub
     </button>
@@ -8,9 +8,9 @@
       <input :value="sub_query" placeholder="Search Subs"/>
       <icon name="search"/>
     </div>
-    <create-sub-modal ref="create_sub_modal"/>
-    <ul>
-      <li id="subs-list" v-for="sub in subs">
+    <create-sub-modal ref="create_sub_modal" v-if="authenticated"/>
+    <ul id="subs-list">
+      <li class="sub" v-for="sub in subs">
         {{ sub }}
       </li>
     </ul>
@@ -25,6 +25,11 @@ module.exports = {
       open_subs: true,
       sub_query: '',
       subs: []
+    }
+  },
+  computed: {
+    authenticated () {
+      return this.$store.getters.authenticated
     }
   },
   methods: {
