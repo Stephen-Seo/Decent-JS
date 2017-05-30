@@ -234,7 +234,7 @@ body {
   border-bottom: none;
   background: #444;
 }
-#register-form, #login-form {
+#register-form, #login-form, #createsub-form {
   width: 100%;
   padding: 20px;
 }
