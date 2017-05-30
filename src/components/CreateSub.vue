@@ -36,7 +36,7 @@ module.exports = {
     },
     submit () {
       if (this.new_sub_name !== '') {
-        this.axios.post('http://192.168.0.122:8080/create_subvoat', {
+        this.axios.post(this.$store.getters.server + '/create_subvoat', {
           subvoat_name: this.new_sub_name,
           username: this.$store.getters.username,
           api_token: this.$store.getters.api_token

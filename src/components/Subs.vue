@@ -10,9 +10,11 @@
     </div>
     <create-sub-modal ref="create_sub_modal" v-if="authenticated"/>
     <ul id="subs-list">
-      <li class="sub" v-for="sub in subs">
-        {{ sub }}
-      </li>
+      <router-link v-for="sub in subs" :key="sub" :to="{name: 'SubView', params: {sub_name: sub}}">
+        <li class="sub">
+          {{ sub }}
+        </li>
+      </router-link>
     </ul>
   </div>
 </template>

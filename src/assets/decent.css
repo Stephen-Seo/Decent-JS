@@ -1,19 +1,15 @@
 body {
-  box-sizing: border-box;
+  font-size: 0;
   background: #333;
   margin: 0px;
   font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
   height: 100%;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
-}
 /* Main App */
 #decent {
   position: relative;
   white-space: nowrap;
-  font-size: 0;
   height: 100vh;
 }
 #decent button {
@@ -34,7 +30,10 @@ body {
   outline: none;
   border-bottom: 1px solid #a2009d;
 }
-
+#decent a {
+  text-decoration: none;
+  color: #888;
+}
 /* Nav Bar */
 #nav-bar {
   display: inline-block;
@@ -44,9 +43,11 @@ body {
   right: 300px;
   height: 80px;
   background: #222;
+  font-size: 12pt;
   color: #FFF;
 }
 #nav-bar #logo {
+  display: inline-block;
   margin: 15px;
   height: 50px;
 }
@@ -59,6 +60,15 @@ body {
 }
 #nav-bar #subs-button:hover {
   background: #333;
+}
+#nav-bar #sub-name {
+  position: relative;
+  top: -22px;
+  left: -25px;
+  display: inline-block;
+  font-size: 18pt;
+  font-weight: bold;
+  color: #666;
 }
 
 /* Side Bar */
@@ -198,10 +208,38 @@ body {
 }
 #subsbar #subs-list .sub {
   padding: 5px 20px;
+  text-decoration: none;
   cursor: pointer;
 }
 #subsbar #subs-list .sub:hover {
   background: #333;
+}
+
+/* Content Panel */
+#content-panel {
+  box-sizing: border-box;
+  position: absolute;
+  top: 80px;
+  left: 300px;
+  right: 300px;
+  bottom: 0px;
+  color: #888;
+  font-size: 12pt;
+}
+
+/* Sub View */
+#sub-view {
+  padding: 15px;
+  height: 100%;
+}
+#sub-view .thread {
+  padding: 10px;
+}
+#sub-view .thread.odd {
+  background: #383838;
+}
+#sub-view .thread #title {
+  font-size: 14pt;
 }
 
 /* Modals */
@@ -213,6 +251,7 @@ body {
   height: 100%;
   background: rgba(0,0,0,0.3);
   transition: opacity 2s ease;
+  z-index: 9999;
 }
 .modal-container {
   position: relative;

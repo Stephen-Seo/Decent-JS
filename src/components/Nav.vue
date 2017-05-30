@@ -4,6 +4,9 @@
           <icon name="bars"/>
         </button>
   	<img id="logo" src="../assets/Decent-logo-green-pink.png"/>
+        <span id="sub-name" v-if="this.$route.params.sub_name">
+          . {{this.$route.params.sub_name}}
+        </span>
   </div>
 
 
@@ -18,6 +21,7 @@ module.exports = {
   },
   methods: {
     toggle_subs () {
+      console.dir(this.$route.params)
       this.$emit('toggle-subs')
     }
   }

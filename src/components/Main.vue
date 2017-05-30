@@ -1,4 +1,7 @@
 <template>
+  <div id="front-page">
+
+  </div>
 </template>
 
 <script>

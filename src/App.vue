@@ -3,7 +3,9 @@
     <nav-view @toggle-subs="toggle_subs"/>
     <subsbar ref="subs_bar"/>
     <sidebar @login="login"/>
-    <router-view></router-view>
+    <div id="content-panel">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
