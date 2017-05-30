@@ -9,6 +9,11 @@
       <icon name="search"/>
     </div>
     <create-sub-modal ref="create_sub_modal"/>
+    <ul>
+      <li id="subs-list" v-for="sub in subs">
+        {{ sub }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -18,7 +23,8 @@ module.exports = {
   data () {
     return {
       open_subs: true,
-      sub_query: ''
+      sub_query: '',
+      subs: []
     }
   },
   methods: {
@@ -28,7 +34,26 @@ module.exports = {
     create_sub () {
       this.$root.test = 'test'
       this.$refs.create_sub_modal.open()
+    },
+    update_subs () {
+      this.axios.get('http://192.168.0.122:8080/list_subvoats')
+        .then(this.loaded_subs).catch(this.error)
+    },
+    loaded_subs (r) {
+      if (r.data.error) {
+        console.log('Failed to load subs,', r.data.error)
+      } else {
+        this.subs = r.data.result
+        console.log('Queried for subs, got', r.data.result.length)
+      }
+    },
+    error (e) {
+      console.log('Failed to query for subs,', e)
     }
+  },
+  created () {
+    this.update_subs()
+    this.$on('update_subs', this.update_subs)
   }
 }
 </script>

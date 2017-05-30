@@ -27,7 +27,6 @@ module.exports = {
       open_menu: false
     }
   },
-  props: ['authenticated'],
   computed: {
     authenticated () {
       return this.$store.getters.authenticated

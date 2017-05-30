@@ -2,7 +2,7 @@
   <div id="decent">
     <nav-view @toggle-subs="toggle_subs"/>
     <subsbar ref="subs_bar"/>
-    <sidebar :authenticated="!!api_token" @login="login"/>
+    <sidebar @login="login"/>
     <router-view></router-view>
   </div>
 </template>

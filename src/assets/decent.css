@@ -190,6 +190,10 @@ body {
   right: 15px;
   color: #888;
 }
+#subsbar #subs-list {
+  font-size: 14pt;
+  color: #999;
+}
 
 /* Modals */
 .modal-mask {
@@ -234,7 +238,7 @@ body {
   border-bottom: none;
   background: #444;
 }
-#register-form, #login-form {
+#register-form, #login-form, #createsub-form {
   width: 100%;
   padding: 20px;
 }
@@ -276,6 +280,7 @@ body {
 }
 .modal-container #status.error {
  color: #D81818;
+ font-size: 14pt;
 }
 
 /* Create Sub Modal */
