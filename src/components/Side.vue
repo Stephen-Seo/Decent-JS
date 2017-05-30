@@ -1,13 +1,13 @@
 <template>
   <div id="sidebar">
-    <button id="login" v-if="!isAuthenticated" @click="open_login">Login</button>
-    <login-modal ref="login_modal"i v-if="!isAuthenticated"/>
+    <button id="login" v-if="!authenticated" @click="open_login">Login</button>
+    <login-modal ref="login_modal"i v-if="!authenticated"/>
 
-    <div id="userbar" v-show="isAuthenticated" @click="toggle_menu">
+    <div id="userbar" v-show="authenticated" @click="toggle_menu">
       <span id="user">{{this.$store.state.username}}@home</span>
       <span id="cents">0</span>
     </div>
-    <div id="user-menu" v-if="isAuthenticated":class="{open: open_menu}">
+    <div id="user-menu" v-if="authenticated":class="{open: open_menu}">
       <ul>
         <li>Profile <icon name="user"/></li>  
         <li>Inbox <icon name="envelope-o"/></li>  
@@ -27,7 +27,6 @@ module.exports = {
       open_menu: false
     }
   },
-  props: ['isAuthenticated'],
   computed: {
     authenticated () {
       return this.$store.getters.authenticated
