@@ -69,6 +69,12 @@ const store = new Vuex.Store({
     },
     authenticated (state) {
       return state.api_token !== ''
+    },
+    username (state) {
+      return state.username
+    },
+    api_token (state) {
+      return state.api_token
     }
   }
 })
