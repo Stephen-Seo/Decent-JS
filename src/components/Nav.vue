@@ -1,12 +1,12 @@
 <template>
   <div id="nav-bar">
-        <button id="subs-button" @click="toggle_subs">
-          <icon name="bars"/>
-        </button>
+    <button id="subs-button" @click="toggle_subs">
+      <icon name="bars"/>
+    </button>
   	<img id="logo" src="../assets/Decent-logo-green-pink.png"/>
-        <span id="sub-name" v-if="this.$route.params.sub_name">
-          . {{this.$route.params.sub_name}}
-        </span>
+    <span id="sub-name" v-if="this.$route.params.sub_name">
+      . {{this.$route.params.sub_name}}
+    </span>
   </div>
 
 

@@ -65,7 +65,7 @@ module.exports = {
     submit () {
       if (this.tab === 'register') {
         if (this.password === this.pass_conf) {
-          this.axios.post('http://192.168.0.122:8080/register', {
+          this.axios.post(this.$store.getters.server + '/register', {
             username: this.username,
             password: this.password
           }).then(this.success).catch(this.error)
