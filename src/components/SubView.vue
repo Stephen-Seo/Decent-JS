@@ -15,6 +15,7 @@ module.exports = {
   name: 'SubView',
   data () {
     return {
+      valid: false,
       threads: []
     }
   },
@@ -23,12 +24,38 @@ module.exports = {
       return this.$store.getters.authenticated
     }
   },
+  created () {
+    this.update()
+  },
   watch: {
     '$route' () {
-      this.get_threads()
+      this.update()
     }
   },
   methods: {
+    update () {
+      this.get_threads()
+      console.log(this.valid)
+      if (this.valid) {
+        this.$store.commit('setView', 'sub')
+        this.$store.commit('setPageInfo', {
+          title: this.$route.params.sub_name,
+          subscibers: 0,
+          description: '',
+          sidebar: ''
+        })
+        // Debug
+        this.$store.dispatch('notify', {
+          type: 'success',
+          message: 'sub is valid'
+        })
+      } else {
+        this.$store.dispatch('notify', {
+          type: 'error',
+          message: 'Sub does not exist'
+        })
+      }
+    },
     get_threads () {
       this.axios.post(this.$store.getters.server + '/get_threads', {
         subvoat_name: this.$route.params.sub_name
@@ -38,22 +65,29 @@ module.exports = {
             type: 'error',
             message: r.data.error
           })
+          this.valid = false
           return
         }
+
         this.threads = r.data.result
+        // Debug
+        this.$store.dispatch('notify', {
+          type: 'success',
+          message: 'Found ' + this.threads.length + ' Threads'
+        })
+        this.valid = true
+        return
       }).catch((e) => {
         this.$store.dispatch('notify', {
           type: 'error',
           message: e
         })
+        this.valid = false
       })
     },
     create_thread () {
       this.$refs.create_thread_modal.open()
     }
-  },
-  created () {
-    this.$on('update_threads', this.get_threads)
   }
 }
 </script>
