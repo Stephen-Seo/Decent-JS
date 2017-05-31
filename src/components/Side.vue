@@ -15,6 +15,10 @@
         <li @click="logout">Logout <icon name="times"/></li>  
       </ul>
     </div>
+    <div id="page-info">
+      <div id="title">{{this.$store.state.page_info.title}}</div>
+
+    </div>
   </div>
 </template>
 

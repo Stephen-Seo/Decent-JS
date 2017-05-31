@@ -35,8 +35,7 @@ module.exports = {
       status_msg: '',
       username: '',
       password: '',
-      pass_conf: '',
-      keypair: require('../keypair')
+      pass_conf: ''
     }
   },
   computed: {

@@ -11,9 +11,16 @@ const store = new Vuex.Store({
     api_token: '',
     server_address: '192.168.0.122',
     server_port: '8080',
+    view: 'front-page',
     status: {
       type: '',
       message: ''
+    },
+    page_info: {
+      title: 'Front Page',
+      subscribers: 0,
+      description: '',
+      sidebar: ''
     }
   },
   actions: {
@@ -61,6 +68,12 @@ const store = new Vuex.Store({
     },
     setStatus (state, status) {
       state.status = status
+    },
+    setPageInfo (state, info) {
+      state.page_info = info
+    },
+    setView (state, view) {
+      state.view = view
     }
   },
   getters: {

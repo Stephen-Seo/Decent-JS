@@ -158,6 +158,12 @@ body {
   margin: 0;
   list-style: none;
 }
+#sidebar #page-info {
+  padding: 10px;
+}
+#sidebar #page-info #title {
+  font-size: 18pt;
+}
 
 /* Subs Bar */
 #subsbar {
@@ -214,6 +220,9 @@ body {
 #subsbar #subs-list .sub:hover {
   background: #333;
 }
+#subsbar #subs-list .router-link-active .sub {
+  background: #333;
+}
 
 /* Content Panel */
 #content-panel {
@@ -235,7 +244,7 @@ body {
 #sub-view .thread {
   padding: 10px;
 }
-#sub-view .thread.odd {
+#sub-view .thread.even {
   background: #383838;
 }
 #sub-view .thread #title {

@@ -1,6 +1,6 @@
 <template>
   <div id="sub-view">
-    <div class="thread" v-for="thread in threads" :class="($index % 2 == 0) ? 'even' : 'odd'">
+    <div class="thread" v-for="(thread,idx) in threads" :class="(idx % 2 == 0) ? 'even' : 'odd'">
       <span id="title">{{thread.title}}</span>
     </div>
   </div>
