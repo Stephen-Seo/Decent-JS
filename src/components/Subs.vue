@@ -43,19 +43,25 @@ module.exports = {
       this.$refs.create_sub_modal.open()
     },
     update_subs () {
-      this.axios.get('http://192.168.0.122:8080/list_subvoats')
+      this.axios.get(this.$store.getters.server + '/list_subvoats')
         .then(this.loaded_subs).catch(this.error)
     },
     loaded_subs (r) {
       if (r.data.error) {
-        console.log('Failed to load subs,', r.data.error)
+        this.$store.dispatch('notify', {
+          type: 'error',
+          message: r.data.error
+        })
       } else {
         this.subs = r.data.result
         console.log('Queried for subs, got', r.data.result.length)
       }
     },
     error (e) {
-      console.log('Failed to query for subs,', e)
+      this.$store.dispatch('notify', {
+        type: 'error',
+        message: e
+      })
     }
   },
   created () {

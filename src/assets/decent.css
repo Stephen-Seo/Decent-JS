@@ -30,6 +30,16 @@ body {
   outline: none;
   border-bottom: 1px solid #a2009d;
 }
+#decent textarea{
+ border: none;
+ padding: 15px;
+ background: #333;
+ color: #eee;
+}
+#decent textarea:focus{
+  outline: none;
+  border-bottom: 1px solid #a2009d;
+}
 #decent a {
   text-decoration: none;
   color: #888;
@@ -241,6 +251,12 @@ body {
 #sub-view .thread #title {
   font-size: 14pt;
 }
+#sub-view #create-thread {
+  width: 100%;
+  padding: 10px;
+  background: #282828;
+  font-size: 12pt;
+}
 
 /* Modals */
 .modal-mask {
@@ -286,7 +302,7 @@ body {
   border-bottom: none;
   background: #444;
 }
-#register-form, #login-form, #createsub-form {
+#register-form, #login-form, #createsub-form, #createthread-form {
   width: 100%;
   padding: 20px;
 }
@@ -297,6 +313,13 @@ body {
   margin: 10px 0px 20px 0px;
 }
 .modal-container input {
+ display: block;
+ border: none;
+ width: 50%;
+ margin: 5px 0px;
+ background: #333;
+}
+.modal-container textarea {
  display: block;
  border: none;
  width: 50%;
@@ -333,6 +356,11 @@ body {
 
 /* Create Sub Modal */
 #create-sub-modal .modal-container {
+  padding: 15px;
+}
+
+/* Create Thread Modal */
+#create-thread-modal .modal-container {
   padding: 15px;
 }
 

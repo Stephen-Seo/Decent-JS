@@ -1,6 +1,10 @@
 <template>
   <div id="sub-view">
-    <div class="thread" v-for="thread in threads" :class="($index % 2 == 0) ? 'even' : 'odd'">
+    <button id="create-thread" @click="create_thread" v-if="authenticated">
+      Create thread
+    </button>
+    <create-thread-modal ref="create_thread_modal" v-if="authenticated"/>
+    <div class="thread" v-for="thread, index in threads" :class="(index % 2 == 0) ? 'even' : 'odd'">
       <span id="title">{{thread.title}}</span>
     </div>
   </div>
@@ -43,7 +47,13 @@ module.exports = {
           message: e
         })
       })
+    },
+    create_thread () {
+      this.$refs.create_thread_modal.open()
     }
+  },
+  created () {
+    this.$on('update_threads', this.get_threads)
   }
 }
 </script>

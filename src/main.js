@@ -17,6 +17,7 @@ import Side from './components/Side'
 import Subs from './components/Subs'
 import Login from './components/Login'
 import CreateSub from './components/CreateSub'
+import CreateThread from './components/CreateThread'
 
 /* Config */
 Vue.config.productionTip = false
@@ -30,6 +31,7 @@ Vue.component('sidebar', Side)
 Vue.component('subsbar', Subs)
 Vue.component('icon', Icon)
 Vue.component('create-sub-modal', CreateSub)
+Vue.component('create-thread-modal', CreateThread)
 
 /* Main Vue Instance */
 var decent = new Vue({
