@@ -25,16 +25,15 @@ module.exports = {
     }
   },
   created () {
-    this.update()
+    this.get_threads()
   },
   watch: {
     '$route' () {
-      this.update()
+      this.get_threads()
     }
   },
   methods: {
     update () {
-      this.get_threads()
       console.log(this.valid)
       if (this.valid) {
         this.$store.commit('setView', 'sub')
@@ -66,6 +65,7 @@ module.exports = {
             message: r.data.error
           })
           this.valid = false
+          this.threads = []
           return
         }
 
@@ -76,13 +76,14 @@ module.exports = {
           message: 'Found ' + this.threads.length + ' Threads'
         })
         this.valid = true
-        return
+        this.update()
       }).catch((e) => {
         this.$store.dispatch('notify', {
           type: 'error',
           message: e
         })
         this.valid = false
+        this.threads = []
       })
     },
     create_thread () {
