@@ -33,7 +33,7 @@ module.exports = {
     }
   },
   methods: {
-    update () {
+    validate () {
       console.log(this.valid)
       if (this.valid) {
         this.$store.commit('setView', 'sub')
@@ -76,7 +76,7 @@ module.exports = {
           message: 'Found ' + this.threads.length + ' Threads'
         })
         this.valid = true
-        this.update()
+        this.validate()
       }).catch((e) => {
         this.$store.dispatch('notify', {
           type: 'error',
